@@ -1,0 +1,257 @@
+body {
+  font-family: 'Vazir', sans-serif;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  direction: rtl;
+  background-image: url('https://picodl.com/download/stylish-hexagonal-line-pattern-background_1017-19742.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+}
+
+body.dark-mode {
+  background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+  color: #ffffff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.theme-switch-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .slider .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  transition: opacity 0.3s;
+  color: #333; /* رنگ آیکون‌ها سیاه */
+/* } */ */
+
+/* .slider .sun {
+  left: 6px;
+  opacity: 1;
+}
+
+.slider .moon {
+  right: 6px;
+  opacity: 0;
+} */
+
+input:checked + .slider {
+  background-color: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+input:checked + .slider .sun {
+  opacity: 0;
+}
+
+input:checked + .slider .moon {
+  opacity: 1;
+}
+
+.container {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .container {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+body.dark-mode p {
+  color: #ccc;
+}
+
+input, button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: 'Vazir', sans-serif;
+  box-sizing: border-box;
+}
+
+body.dark-mode input {
+  background-color: #333;
+  color: #ffffff;
+  border-color: #555;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.qrcode-container {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .qrcode-container {
+  background-color: #333;
+  border-color: #555;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode footer {
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #ffffff;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+body.dark-mode footer a {
+  color: #4dabf7; /* رنگ روشن‌تر برای لینک در حالت تاریک */
+}
+
+footer a:hover {
+  color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#qrcode img {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.2rem;
+  }
+
+  p {
+      font-size: 0.8rem;
+  }
+
+  input, button {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+  }
+
+  .container {
+      padding: 1rem;
+  }
+}
