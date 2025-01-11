@@ -1,36 +1,46 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QR Code Generator</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-</head>
-<body>
+  </head>
+  <body class="dark-mode">
     <div class="overlay"></div>
     <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="theme-toggle">
-            <input type="checkbox" id="theme-toggle">
-            <div class="slider round">
-            </div>
-        </label>
+      <label class="theme-switch" for="theme-toggle">
+        <input type="checkbox" id="theme-toggle" checked />
+        <div class="slider round"></div>
+      </label>
     </div>
     <div class="container">
-        <h1>QR Code</h1>
-        <p>لطفا آدرس مورد نظر خود را وارد کنید:</p>
-        
-        <input type="text" id="urlInput" placeholder="مثال: https://example.com">
-        <button onclick="generateQRCode()">ایجاد QR Code</button>
-        
-        <div id="qrcode" class="qrcode-container"></div>
+      <h1 id="neon-title">
+        <span>Q</span>
+        <span>R</span>
+        <span> </span>
+        <span> </span>
+        <span>C</span>
+        <span>o</span>
+        <span>d</span>
+        <span>e</span>
+      </h1>
+      <p>لطفا آدرس مورد نظر خود را وارد کنید:</p>
+
+      <input type="text" id="urlInput" placeholder="مثال: https://example.com" />
+      <button onclick="generateQRCode()">ایجاد QR Code</button>
+
+      <div id="qrcode" class="qrcode-container"></div>
     </div>
 
     <footer>
       <p>Created By <a href="https://sinab.framer.website/" target="_blank">Sinab</a></p>
-  </footer>
+    </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

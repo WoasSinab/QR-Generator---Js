@@ -1,5 +1,4 @@
-body {
-  font-family: 'Vazir', sans-serif;
+body {  font-family: "Vazir", sans-serif;
   color: #333;
   display: flex;
   justify-content: center;
@@ -7,7 +6,7 @@ body {
   height: 100vh;
   margin: 0;
   direction: rtl;
-  background-image: url('https://picodl.com/download/stylish-hexagonal-line-pattern-background_1017-19742.jpg');
+  background-image: url("https://picodl.com/download/stylish-hexagonal-line-pattern-background_1017-19742.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -15,7 +14,7 @@ body {
 }
 
 body.dark-mode {
-  background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+  background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
   color: #ffffff;
 }
 
@@ -86,7 +85,8 @@ body.dark-mode .overlay {
   font-size: 18px;
   transition: opacity 0.3s;
   color: #333; /* رنگ آیکون‌ها سیاه */
-/* } */ */
+/* } */
+*/
 
 /* .slider .sun {
   left: 6px;
@@ -132,10 +132,42 @@ body.dark-mode .container {
   color: #ffffff;
 }
 
-h1 {
-  font-size: 1.5rem;
+#neon-title {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #007bff;
+  color: #fff;
+  display: inline-block; /* تغییر از flex به inline-block */
+  unicode-bidi: bidi-override; /* اضافه شد */
+  direction: ltr; /* اضافه شد */
+}
+
+#neon-title span {
+  display: inline-block;
+  text-shadow: 0 0 5px #00bcd4, 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 40px #00bcd4,
+    0 0 80px #00bcd4;
+  animation: flicker 3s infinite;
+  animation-delay: calc(var(--delay) * 1s);
+}
+
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #00bcd4, 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 40px #00bcd4,
+      0 0 80px #00bcd4;
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+    opacity: 0;
+  }
 }
 
 p {
@@ -148,7 +180,8 @@ body.dark-mode p {
   color: #ccc;
 }
 
-input, button {
+input,
+button {
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
@@ -156,7 +189,7 @@ input, button {
   border-radius: 5px;
   margin-bottom: 1rem;
   transition: border-color 0.3s ease;
-  font-family: 'Vazir', sans-serif;
+  font-family: "Vazir", sans-serif;
   box-sizing: border-box;
 }
 
@@ -229,8 +262,12 @@ footer a:hover {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #qrcode img {
@@ -239,19 +276,20 @@ footer a:hover {
 
 @media (max-width: 480px) {
   h1 {
-      font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 
   p {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
   }
 
-  input, button {
-      font-size: 0.9rem;
-      padding: 0.5rem;
+  input,
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
   }
 
   .container {
-      padding: 1rem;
+    padding: 1rem;
   }
 }
